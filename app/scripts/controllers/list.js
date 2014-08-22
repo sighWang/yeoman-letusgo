@@ -12,16 +12,6 @@
  */
 angular.module('yeomanLetusgoApp')
     .controller('ListCtrl', function ($scope) {
-        $scope.todos = [
-            'Item1',
-            'Item2',
-            'Item3'
-        ];
-        $scope.addTodo = function () {
-            $scope.todos.push($scope.todo);
-            $scope.todo = '';
-        }
-        $scope.removeTodo = function (index) {
-            $scope.todos.splice(index, 1);
-        }
+        var cartService = new CartService();
+        $scope.goodsList = cartService.getGoodslist();
     });

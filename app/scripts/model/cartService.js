@@ -21,6 +21,7 @@ CartService.prototype.getCustomGoodsById = function (id) {
     }
 }
 CartService.prototype.addGoodsNumberById = function (id){
+
     var index = -1;
     var customGoodsList = this.customGoodsList;
     for (var i = 0; i < customGoodsList.length; i++){
@@ -32,8 +33,7 @@ CartService.prototype.addGoodsNumberById = function (id){
         customGoodsList[index].number++;
     }
     else{
-        var _goodsList = this.goodsList ;
-        console.log(_goodsList);
+        var _goodsList = this.goodsList;
         var item = _.find(_goodsList,{'id':id});
         var customGoods = new CustomGoods(item, 1);
         customGoodsList.push(customGoods);

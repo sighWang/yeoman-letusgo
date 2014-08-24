@@ -2,6 +2,31 @@
     <div class="panel panel-primary">
         <div class="panel-heading">我的购物车------let us go </div>
         <div class="panel-body">
+            <div class="panel panel-default" ng-repeat="catagary in catagarys">
+                <div class="panel-heading">{{catagary[0].goods.catagary}}</div>
+                <div class="panel-body">
+                    <div class="row" ng-repeat="item in catagary">
+                        <div class="col-md-2">{{item.goods.name}}</div>
+                        <div class="col-md-2">{{item.goods.price + '元/' + item.goods.unit}}</div>
+                        <div class="col-md-3">
+                            <span class="glyphicon glyphicon-minus" ng-click="minusOneToCart()"></span>
+                            <input type="button" readonly value="{{item.number + item.goods.unit}}">
+                            <span class="glyphicon glyphicon-plus" ng-click="addOneToCart($item.goods.id)"></span>
+                        </div>
+                        <div class="col-md-2">{{'共  ' + getSubtotal(item) + '元'}}</div>
+                        <div class="col-md-1"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-offset-8 col-md-2">
+                <div class="thumbnail">
+                   <span>
+                   总计{{}}<a ng-href="#/pay" class="btn btn-primary btn-lg" role="button">PAY</a>
+                   </span>
+                </div>
+              </div>
+            </div>
         </div>
     </div>
 </div>

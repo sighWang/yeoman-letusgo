@@ -1,0 +1,90 @@
+angular.module('yeomanLetusgoApp')
+  .service('CartService', function CartService() {
+        initLocalStorage();
+        this.customGoodsList = JSON.parse(localStorage.getItem('customGoodsList'));
+        this.goodsList = JSON.parse(localStorage.getItem('goodsList'));
+
+        this.getCustomGoodsList = function () {
+            return this.customGoodsList;
+        };
+
+        this.getGoodslist = function () {
+            return this.goodsList;
+        };
+
+        this.editCustomGoodsList = function () {
+            localStorage.setItem('customGoodsList',JSON.stringify(customGoodsList));
+        };
+
+        this.addGoodsNumberById = function () {
+            var index = -1;
+            var customGoodsList = this.customGoodsList;
+            for (var i = 0; i < customGoodsList.length; i++){
+                if(_.contains(customGoodsList[i].goods, id)){
+                    index = i;
+                }
+            }
+            if(index !== -1){
+                customGoodsList[index].number++;
+            }
+            else{
+                var _goodsList = this.goodsList;
+                var item = _.find(_goodsList,{'id':id});
+                var customGoods = new CustomGoods(item, 1);
+                customGoodsList.push(customGoods);
+                this.editCustomGoodsList(customGoodsList);
+                return;
+            }
+            this.editCustomGoodsList(customGoodsList);
+            return customGoodsList[index].number;
+        };
+
+        this.minusGoodsNumberById = function () {
+            var index = -1;
+            var customGoodsList = this.customGoodsList;
+            for (var i = 0; i < customGoodsList.length; i++){
+                if(_.contains(customGoodsList[i].goods, id)){
+                    index = i;
+                }
+            }
+
+            if(index !== -1 && customGoodsList[index].number > 0){
+                customGoodsList[index].number--;
+                if(customGoodsList[index].number === 0){
+                    customGoodsList.splice(index);
+                    this.editCustomGoodsList(customGoodsList);
+                    return 0;
+                }
+
+            }
+            else{
+                return -1;
+            }
+
+            this.editCustomGoodsList(customGoodsList);
+
+            return customGoodsList[index].number;
+        };
+
+        this.countCart = function () {
+            var cartNumber = 0;
+            var customGoodsList =  this.customGoodsList;
+            _.forEach(customGoodsList, function(customGoods) {
+                cartNumber += customGoods.number;
+            });
+            return cartNumber;
+        };
+
+        this.getSubtoatl = function () {
+            return customGoods.number * customGoods.goods.price;
+        };
+
+        this.getTotal = function () {
+            var _customGoodsList = this.customGoodsList;
+            var total = 0;
+            _.forEach(_customGoodsList, function (customGoods){
+                total += customGoods.number * customGoods.goods.price;
+            });
+            return total;
+        }
+});

@@ -11,8 +11,8 @@
  * Controller of the yeomanLetusgoApp
  */
 angular.module('yeomanLetusgoApp')
-    .controller('CartCtrl', function ($scope) {
-        var cartService = new CartService();
+    .controller('CartCtrl', function ($scope,cartService) {
+      //  var cartService = new CartService();
         var goodsList = cartService.getGoodslist();
         var customGoodsList = cartService.getCustomGoodsList();
         var catagarys = _.groupBy(customGoodsList,function (customGoods){

@@ -8,13 +8,14 @@
  * Controller of the yeomanLetusgoApp
  */
 angular.module('yeomanLetusgoApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.todos = [
-      'Item1',
-      'Item2',
-      'Item3'
-    ];
-    $scope.addTodo = function () {
+  .controller('MainCtrl', function ($scope, localStorageService) {
+        var todosInstore = localStorageService.get('todos');
+        $scope.todos = todosInstore && todosInstore.split('\n');
+        $scope.$watch('todos', function () {
+           localStorageService.add('todos', $scope.todos.join('\n'));
+        }, true);
+
+        $scope.addTodo = function () {
         $scope.todos.push($scope.todo);
         $scope.todo = '';
     }

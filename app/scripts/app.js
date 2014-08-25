@@ -16,23 +16,27 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.sortable'
+    'ui.sortable',
+    'LocalStorageModule'
   ])
+    .config(['localStorageServiceProvider', function(localStorageServiceProvider){
+        localStorageServiceProvider.setPrefix('ls');
+    }])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/',{
          templateUrl: 'views/welcome.html',
-         controller: 'IndexCtrl'
+         controller: 'MainCtrl'
       })
       .when('/list', {
          templateUrl: 'views/list.html',
          controller: 'ListCtrl'
       })
-      .when('/cart',{
+      .when('/cart', {
          templateUrl: 'views/cart.html',
          controller: 'CartCtrl'
       })
-      .when('/pay',{
+      .when('/pay', {
          templateUrl: 'views/pay.html',
          controller: 'PayCtrl'
       })

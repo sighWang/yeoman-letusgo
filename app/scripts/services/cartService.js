@@ -74,10 +74,6 @@ angular.module('yeomanLetusgoApp')
             return cartNumber;
         };
 
-        this.getSubtoatl = function (customGoods) {
-            return customGoods.number * customGoods.goods.price;
-        };
-
         this.getTotal = function () {
             var _customGoodsList = this.customGoodsList;
             var total = 0;

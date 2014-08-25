@@ -1,15 +1,3 @@
-/**
- * Created by sigh on 14-8-21.
- */
-'use strict';
-
-/**
- * @ngdoc function
- * @name yeomanLetusgoApp.controller:CartCtrl
- * @description
- * # CartCtrl
- * Controller of the yeomanLetusgoApp
- */
 angular.module('yeomanLetusgoApp')
     .controller('CartCtrl', function ($scope,cartService) {
       //  var cartService = new CartService();

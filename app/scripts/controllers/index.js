@@ -8,8 +8,8 @@
  * Controller of the yeomanLetusgoApp
  */
     angular.module('yeomanLetusgoApp')
-        .controller('IndexCtrl', function ($scope) {
-        var cartService = new CartService();
+        .controller('IndexCtrl', function ($scope,cartService) {
+       // var cartService = new CartService();
         var customGoodsList = cartService.getCustomGoodsList();
         var cartNumber = 0;
 

@@ -1,8 +1,7 @@
 angular.module('yeomanLetusgoApp')
-  .service('CartService', function CartService() {
-        initLocalStorage();
-        this.customGoodsList = JSON.parse(localStorage.getItem('customGoodsList'));
-        this.goodsList = JSON.parse(localStorage.getItem('goodsList'));
+  .service('cartService', function CartService(localStorageService) {
+        this.customGoodsList = localStorageService.get('customGoodsList');
+        this.goodsList = localStorageService.get('goodsList');
 
         this.getCustomGoodsList = function () {
             return this.customGoodsList;
@@ -12,11 +11,11 @@ angular.module('yeomanLetusgoApp')
             return this.goodsList;
         };
 
-        this.editCustomGoodsList = function () {
-            localStorage.setItem('customGoodsList',JSON.stringify(customGoodsList));
+        this.editCustomGoodsList = function (customGoodsList) {
+            localStorageService.set('customGoodsList',customGoodsList);
         };
 
-        this.addGoodsNumberById = function () {
+        this.addGoodsNumberById = function (id) {
             var index = -1;
             var customGoodsList = this.customGoodsList;
             for (var i = 0; i < customGoodsList.length; i++){
@@ -75,7 +74,7 @@ angular.module('yeomanLetusgoApp')
             return cartNumber;
         };
 
-        this.getSubtoatl = function () {
+        this.getSubtoatl = function (customGoods) {
             return customGoods.number * customGoods.goods.price;
         };
 

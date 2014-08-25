@@ -15,4 +15,6 @@ angular.module('yeomanLetusgoApp')
             var id = goodsList[index].id;
             cartService.addGoodsNumberById(id);
         };
+        $scope.total = cartService.getTotal();
+
     });

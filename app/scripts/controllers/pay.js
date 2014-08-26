@@ -1,5 +1,8 @@
 angular.module('yeomanLetusgoApp')
     .controller('PayCtrl', function ($scope,cartService) {
+        $scope.$parent.cartActive = '';
+        $scope.$parent.cartActive = '';
+
         var customGoodsList = cartService.getCustomGoodsList();
         $scope.customGoodsList = customGoodsList;
 
@@ -7,6 +10,7 @@ angular.module('yeomanLetusgoApp')
             var id = customGoodsList[index].id;
             cartService.addGoodsNumberById(id);
         };
+
         $scope.total = cartService.getTotal();
         $scope.customGoodsList = customGoodsList;
     });

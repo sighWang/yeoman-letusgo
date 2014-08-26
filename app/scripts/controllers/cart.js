@@ -1,6 +1,8 @@
 angular.module('yeomanLetusgoApp')
-    .controller('CartCtrl', function ($scope,cartService,localStorageService) {
-        var goodsList = cartService.getGoodslist();
+    .controller('CartCtrl', function ($scope,cartService) {
+        $scope.$parent.listActive = '';
+        $scope.$parent.cartActive = 'active';
+
         var customGoodsList = cartService.getCustomGoodsList();
         var catagarys = _.groupBy(customGoodsList,function (customGoods){
             return customGoods.goods.catagary;
@@ -13,10 +15,9 @@ angular.module('yeomanLetusgoApp')
             $scope.total = cartService.getTotal();
             $scope.$parent.cartNumber = cartService.getCartNumber();
         };
+
         $scope.minusOneToCart = function (item){
-            var index = customGoodsList.indexOf(item);
-            customGoodsList[index].number--;
-            localStorageService.set('customGoodsList',customGoodsList);
+            cartService.minusGoodsNumberById(item.goods.id);
             $scope.total = cartService.getTotal();
             $scope.$parent.cartNumber = cartService.getCartNumber();
         };

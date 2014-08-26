@@ -10,11 +10,9 @@ angular.module('yeomanLetusgoApp')
         this.getGoodslist = function () {
             return this.goodsList;
         };
-
         this.editCustomGoodsList = function (customGoodsList) {
             localStorageService.set('customGoodsList',customGoodsList);
         };
-
         this.addGoodsNumberById = function (id) {
             var index = -1;
             var customGoodsList = this.customGoodsList;
@@ -37,7 +35,7 @@ angular.module('yeomanLetusgoApp')
             this.editCustomGoodsList(customGoodsList);
         };
 
-        this.minusGoodsNumberById = function () {
+        this.minusGoodsNumberById = function (id) {
             var index = -1;
             var customGoodsList = this.customGoodsList;
             for (var i = 0; i < customGoodsList.length; i++){
@@ -45,32 +43,16 @@ angular.module('yeomanLetusgoApp')
                     index = i;
                 }
             }
-
             if(index !== -1 && customGoodsList[index].number > 0){
                 customGoodsList[index].number--;
                 if(customGoodsList[index].number === 0){
                     customGoodsList.splice(index);
-                    this.editCustomGoodsList(customGoodsList);
-                    return 0;
                 }
-
             }
             else{
                 return -1;
             }
-
             this.editCustomGoodsList(customGoodsList);
-
-            return customGoodsList[index].number;
-        };
-
-        this.countCart = function () {
-            var cartNumber = 0;
-            var customGoodsList =  this.customGoodsList;
-            _.forEach(customGoodsList, function(customGoods) {
-                cartNumber += customGoods.number;
-            });
-            return cartNumber;
         };
 
         this.getTotal = function () {
@@ -80,7 +62,8 @@ angular.module('yeomanLetusgoApp')
                 total += customGoods.number * customGoods.goods.price;
             });
             return total;
-        }
+        };
+
         this.getCartNumber = function () {
             var customGoodsList = this.customGoodsList;
             var cartNumber = 0;

@@ -35,7 +35,6 @@ angular.module('yeomanLetusgoApp')
                 return;
             }
             this.editCustomGoodsList(customGoodsList);
-            return customGoodsList[index].number;
         };
 
         this.minusGoodsNumberById = function () {
@@ -82,4 +81,12 @@ angular.module('yeomanLetusgoApp')
             });
             return total;
         }
+        this.getCartNumber = function () {
+            var customGoodsList = this.customGoodsList;
+            var cartNumber = 0;
+            for (var i = 0; i < customGoodsList.length; i++){
+                cartNumber += customGoodsList[i].number;
+            }
+            return cartNumber;
+        };
 });

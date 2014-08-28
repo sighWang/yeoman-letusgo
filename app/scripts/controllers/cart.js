@@ -11,14 +11,13 @@ angular.module('yeomanLetusgoApp')
             cartService.addGoodsNumberById(item.goods.id);
             $scope.total = cartService.getTotal();
             $scope.$parent.cartNumber = cartService.getCartNumber();
+            $scope.catagarys = cartService.getCatagary();
         };
-
         $scope.minusOneToCart = function (item){
             cartService.minusGoodsNumberById(item.goods.id);
             $scope.total = cartService.getTotal();
             $scope.$parent.cartNumber = cartService.getCartNumber();
             $scope.catagarys = cartService.getCatagary();
-            console.log($scope.catagary);
         };
         $scope.total = cartService.getTotal();
     });

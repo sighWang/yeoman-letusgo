@@ -1,5 +1,5 @@
 angular.module('yeomanLetusgoApp')
-    .service('DataAccessService', function initLocalStorageService(localStorageService) {
+    .service('DataAccessService', function DataAccessService(localStorageService) {
         var goodsList = [];
         var cocacola =new Goods('ITEM000000', '可口可乐', '瓶', 3.00, 'drink');
         var sprite = new Goods('ITEM000001', '雪碧', '瓶', 3.00,  'drink');

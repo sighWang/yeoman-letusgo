@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name yeomanLetusgoApp
- * @description
- * # yeomanLetusgoApp
- *
- * Main module of the application.
- */
 angular
   .module('yeomanLetusgoApp', [
     'ngAnimate',
@@ -26,7 +18,7 @@ angular
     $routeProvider
       .when('/',{
          templateUrl: 'views/welcome.html',
-         controller: 'MainCtrl'
+         controller: 'WelcomeCtrl'
       })
       .when('/list', {
          templateUrl: 'views/list.html',

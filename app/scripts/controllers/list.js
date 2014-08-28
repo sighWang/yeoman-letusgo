@@ -8,6 +8,5 @@ angular.module('yeomanLetusgoApp')
         $scope.addOneToCart = function (goods) {
             cartService.addGoodsNumberById(goods.id);
             $scope.$parent.cartNumber = cartService.getCartNumber();
-            $scope.$emit('to-parent-changeamounts');
         };
     });

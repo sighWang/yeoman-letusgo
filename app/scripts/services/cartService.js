@@ -72,4 +72,14 @@ angular.module('yeomanLetusgoApp')
             }
             return cartNumber;
         };
+
+        this.getCatagary = function () {
+            var customGoodsList = this.customGoodsList;
+            var catagarys = _.groupBy(customGoodsList, function (customGoods){
+                return customGoods.goods.catagary;
+        });
+            return catagarys;
+        };
+
+
 });

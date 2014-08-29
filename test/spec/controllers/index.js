@@ -18,8 +18,7 @@ describe('Controller: indexCtrl', function () {
           });
         };
       });
-
-      });
+    });
 
     describe('title', function () {
 
@@ -27,7 +26,6 @@ describe('Controller: indexCtrl', function () {
             createController();
             expect($scope.cartNumber).toEqual(jasmine.any(Number));
             expect(1).toEqual(1);
-
         });
     });
 

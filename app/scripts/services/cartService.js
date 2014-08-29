@@ -10,6 +10,7 @@ angular.module('yeomanLetusgoApp')
         this.getGoodslist = function () {
             return this.goodsList;
         };
+
         this.editCustomGoodsList = function (customGoodsList) {
             localStorageService.set('customGoodsList',customGoodsList);
         };
@@ -79,9 +80,7 @@ angular.module('yeomanLetusgoApp')
             var customGoodsList = this.customGoodsList;
             var catagarys = _.groupBy(customGoodsList, function (customGoods){
                 return customGoods.goods.catagary;
-        });
+            });
             return catagarys;
         };
-
-
 });

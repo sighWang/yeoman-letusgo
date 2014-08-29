@@ -20,16 +20,11 @@ describe('Controller: indexCtrl', function () {
       });
     });
 
-    describe('title', function () {
+    describe('index.js', function () {
 
-        it('should be a number', function () {
+        it('$scope.cartNumber: should be a number', function () {
             createController();
             expect($scope.cartNumber).toEqual(jasmine.any(Number));
-            expect(1).toEqual(1);
         });
-    });
-
-    it('should attach a list of awesomeThings to the scope', function () {
-        expect(3).toBe(3);
     });
 });

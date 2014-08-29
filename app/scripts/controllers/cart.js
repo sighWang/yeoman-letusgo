@@ -3,9 +3,9 @@ angular.module('yeomanLetusgoApp')
         $scope.$parent.listActive = '';
         $scope.$parent.cartActive = 'active';
 
-        var catagarys = cartService.getCatagary();
-        $scope.catagarys = catagarys;
-        $scope.catagaryNames = Object.keys(catagarys);
+        $scope.catagarys = cartService.getCatagary();
+        $scope.catagaryNames = Object.keys(cartService.getCatagary());
+        $scope.total = cartService.getTotal();
 
         $scope.addOneToCart = function (item) {
             cartService.addGoodsNumberById(item.goods.id);
@@ -19,5 +19,4 @@ angular.module('yeomanLetusgoApp')
             $scope.$parent.cartNumber = cartService.getCartNumber();
             $scope.catagarys = cartService.getCatagary();
         };
-        $scope.total = cartService.getTotal();
     });

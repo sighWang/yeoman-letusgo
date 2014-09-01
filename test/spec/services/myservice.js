@@ -20,7 +20,6 @@ describe('Service: cartService', function () {
 
   it('getCustomGoodsList: result length should be a number', function () {
     expect(cartService.getCustomGoodsList().length).toEqual(jasmine.any(Number));
-
   });
 
   it(' getGoodsList: result length should be 4', function () {

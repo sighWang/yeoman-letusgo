@@ -38,6 +38,7 @@ describe('Controller: indexCtrl', function () {
       expect(cartService.getTotal).toHaveBeenCalled();
       expect(cartService.getCartNumber).toHaveBeenCalled();
       expect(cartService.getCatagary).toHaveBeenCalled();
+
     });
     it('minusGoodsNumberById:should call cartService.minusGoodsNumberById', function () {
       createController();
@@ -45,7 +46,6 @@ describe('Controller: indexCtrl', function () {
       var good = new Goods('ITEM000002', '荔枝','斤', 15.00, 'fruit');
       $scope.minusOneToCart({goods: good, number: 2});
       expect(cartService.minusGoodsNumberById).toHaveBeenCalledWith('ITEM000002');
-
     });
   });
 });

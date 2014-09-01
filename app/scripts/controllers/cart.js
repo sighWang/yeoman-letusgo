@@ -1,7 +1,7 @@
 angular.module('yeomanLetusgoApp')
     .controller('CartCtrl', function ($scope,cartService) {
 
-         $scope.$emit('cartChange');
+         $scope.$emit('cartHighLight');
 
         $scope.catagarys = cartService.getCatagary();
         $scope.catagaryNames = Object.keys(cartService.getCatagary());

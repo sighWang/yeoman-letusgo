@@ -10,22 +10,22 @@
           $scope.cartNumber = cartService.getCartNumber();
         });
 
-        $scope.$on('welcomeChange', function () {
+        $scope.$on('welcomeHighLight', function () {
           $scope.cartActive = '';
           $scope.listActive = '';
         });
 
-        $scope.$on('cartChange', function () {
+        $scope.$on('cartHighLight', function () {
           $scope.listActive = '';
           $scope.cartActive = 'active';
         });
 
-        $scope.$on('listChange', function () {
+        $scope.$on('listHighLight', function () {
           $scope.cartActive = '';
           $scope.listActive = 'active';
         });
 
-        $scope.$on('payChange', function () {
+        $scope.$on('payHighLight', function () {
           $scope.cartActive = '';
           $scope.listActive = '';
         });

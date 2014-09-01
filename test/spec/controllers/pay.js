@@ -22,6 +22,12 @@ describe('Controller: indexCtrl', function () {
 
   describe('pay.js', function () {
 
+    it('shoule be no highLight', function () {
+      spyOn($scope, '$emit');
+      createController();
+      expect($scope.$emit).toHaveBeenCalledWith('payHighLight');
+    });
+
     it('$scope.goodsList: should be a number', function () {
       createController();
       expect($scope.customGoodsList.length).toEqual(jasmine.any(Number));

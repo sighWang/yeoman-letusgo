@@ -1,6 +1,6 @@
 angular.module('yeomanLetusgoApp')
     .controller('ListCtrl', function ($scope,cartService) {
-        $scope.$emit('listChange');
+        $scope.$emit('listHighLight');
         $scope.goodsList = cartService.getGoodslist();
 
         $scope.addOneToCart = function (goods) {

@@ -16,6 +16,7 @@
     <file url="file://$PROJECT_DIR$/test/spec/controllers/index.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test/spec/controllers/list.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test/spec/controllers/pay.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/spec/controllers/welcome.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test/spec/services/myservice.js" charset="UTF-8" />
   </component>
 </project>

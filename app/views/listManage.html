@@ -1,0 +1,29 @@
+<div id="goodsList" class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">商品管理</div>
+
+    <div class="panel-body">
+      <div class="panel panel-default "  ng-repeat="goods in goodsList">
+        <div class="panel-heading animate-show"  ng-show="goods.show">
+          {{goods.id}}
+          {{goods.name}}
+          {{goods.unit}}
+          {{goods.price}}
+          {{goods.catagary}}
+          {{goods.show}}
+          <button type="button" class="btn btn-default" ng-click="removeItem($index)">删除</button>
+          <button type="button" class="btn btn-default" ng-click="showEdit(goods)">修改</button>
+        </div>
+        <div class="panel-body animate-show" ng-hide="goods.show">
+          {{!item.show}}
+          {{item.id}}
+          {{item.name}}
+          {{item.unit}}
+          {{item.price}}
+          {{item.catagary}}
+          <button type="button" class="btn btn-default" ng-click="editItem(goods)">提交修改</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -13,6 +13,7 @@
     <file url="file://$PROJECT_DIR$/app/scripts/services/cartService.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test/karma.conf.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test/spec/controllers/cart.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/spec/controllers/catagaryManage.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test/spec/controllers/index.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test/spec/controllers/list.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test/spec/controllers/pay.js" charset="UTF-8" />

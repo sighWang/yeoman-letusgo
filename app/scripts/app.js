@@ -40,8 +40,8 @@ angular
         controller: 'ListmanageCtrl'
       })
       .when('/editGoods', {
-        templateUrl: 'view/listManager/editGoods.html',
-        controller: 'editGoodsCtrl'
+        templateUrl: 'views/listManage/editGoods.html',
+        controller: 'EditGoodsCtrl'
       })
 //      .when('/addGoods', {
 //        templateUrl: 'view/listManage/addGoods.html',

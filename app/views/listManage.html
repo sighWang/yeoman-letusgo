@@ -20,7 +20,7 @@
           </div>
         </div>
 
-        <div class="panel-body animate-show row" ng-model="item" ng-hide="goods.show">
+        <div class="panel-body animate-show row" ng-model="editedItem" ng-hide="goods.show">
           <div class="input-group  col-md-7 col-md-offset-2">
             <span class="input-group-addon">id</span>
             <input type="text" class="form-control" value="{{item.id}}">
@@ -42,7 +42,7 @@
             <input type="text" class="form-control" value="{{item.catagary}}">
           </div>
           <div class="input-group col-md-7 col-md-offset-2  text-right">
-            <button type="button" class="btn btn-primary" ng-click="editItem(item)">提交修改</button>
+            <button type="button" class="btn btn-primary" ng-click="editItem(editedItem)">提交修改</button>
           </div>
         </div>
       </div>

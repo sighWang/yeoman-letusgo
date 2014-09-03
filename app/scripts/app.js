@@ -39,6 +39,14 @@ angular
         templateUrl: 'views/listManage.html',
         controller: 'ListmanageCtrl'
       })
+      .when('/editGoods', {
+        templateUrl: 'view/listManager/editGoods.html',
+        controller: 'editGoodsCtrl'
+      })
+//      .when('/addGoods', {
+//        templateUrl: 'view/listManage/addGoods.html',
+//        controller: 'addGoodsCtrl'
+//      })
       .otherwise({
         redirectTo: '/'
       });

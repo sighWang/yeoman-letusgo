@@ -24,6 +24,8 @@ angular.module('yeomanLetusgoApp')
     };
 
     $scope.removeItem = function (index) {
-      $scope.goodsList.splice(index, 1);
+      this.goodsList.splice(index, 1);
+      goodsListService.editGoodsList(this.goodsList);
+      $scope.goodsList = cartService.getGoodslist();
     };
   });

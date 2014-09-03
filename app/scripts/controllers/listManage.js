@@ -1,3 +1,4 @@
+'use strict';
 angular.module('yeomanLetusgoApp')
   .controller('ListmanageCtrl', function ($scope, cartService, goodsListService) {
     var goodsList = cartService.getGoodslist();

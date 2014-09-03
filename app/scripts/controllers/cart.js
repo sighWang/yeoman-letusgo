@@ -1,3 +1,4 @@
+'use strict';
 angular.module('yeomanLetusgoApp')
   .controller('CartCtrl', function ($scope, cartService) {
 

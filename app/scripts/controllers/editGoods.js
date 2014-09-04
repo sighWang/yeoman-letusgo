@@ -4,7 +4,8 @@ angular.module('yeomanLetusgoApp')
 
     $scope.goods = goodsListService.getStoreGoods();
 
-    $scope.edit = function (goods){
-        goodsListService.editGoodsList(goods);
+    $scope.edit = function (goods) {
+      goodsListService.editGoods(goods);
+      console.log(goods);
     }
   });

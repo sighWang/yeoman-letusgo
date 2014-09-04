@@ -1,8 +1,8 @@
 <div id="goodsList" class="container">
   <div class="panel panel-default">
     <div class="panel-heading">商品管理</div>
-
     <div class="panel-body">
+      <a>添加新商品</a>
       <table class="table">
         <thead>
         <tr>
@@ -23,7 +23,7 @@
           <td>{{goods.price}}</td>
           <td>{{goods.catagary}}</td>
           <td>
-            <a ng-href="#/itemGoods" ng-click="removeItem($index)">删除</a>
+            <a ng-click="removeItem(goods)">删除</a>
           </td>
           <td>
             <a ng-href="#/editGoods" ng-click="showEdit(goods)">修改</a>

@@ -9,9 +9,10 @@ angular.module('yeomanLetusgoApp')
       goodsListService.storeGoods(goods);
     };
 
-    $scope.removeItem = function (index) {
-      this.goodsList.splice(index, 1);
-      goodsListService.editGoodsList(this.goodsList);
+    $scope.removeItem = function (goods) {
+      var index = _.findIndex(goodsList, {'id': goods.id});
+      goodsList.splice(index, 1);
+      goodsListService.editGoodsList(goodsList);
       $scope.goodsList = cartService.getGoodslist();
     };
   });

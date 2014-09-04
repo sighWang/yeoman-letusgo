@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('yeomanLetusgoApp')
   .service('goodsListService', function GoodsListService(localStorageService) {
     this.goodsList = localStorageService.get('goodsList');

@@ -1,3 +1,5 @@
+'use strict';
+
 function initData(localStorageService) {
   var goodsList = [];
   var cocacola = new Goods('ITEM000000', '可口可乐', '瓶', 3.00, 'drink');

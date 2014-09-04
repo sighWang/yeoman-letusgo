@@ -20,7 +20,7 @@
     <input type="text" list="goodsCatagarys" class="form-control" ng-model="goods.catagary">
   </div>
   <datalist id="goodsCatagarys">
-    <option ng-repeat="catagary in catagarys" value=" {{catagary}} "></option>
+    <option ng-repeat="catagary in catagarys" value="{{catagary}}"></option>
   </datalist>
   <div class="input-group col-md-7 col-md-offset-2  text-right">
     <a ng-href="#/listManage" ng-click="add(goods)">提交修改</a>

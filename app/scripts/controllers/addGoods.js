@@ -7,4 +7,5 @@ angular.module('yeomanLetusgoApp')
       $scope.$emit('refreshGoodsList');
       $scope.$broadcast('refreshGoodsList');
     };
+    $scope.catagarys = catagaryService.getCatagary();
   });

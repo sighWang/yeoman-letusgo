@@ -10,9 +10,9 @@ function initData(localStorageService) {
     localStorageService.set('goodsList', goodsList);
   }
 
-  if (localStorageService.get('catagery') === null ||
-    localStorageService.get('catagery').length === 0) {
-    localStorageService.set('catagary', ['drink', 'fruit', 'sport']);
+  if (localStorageService.get('catagerys') === null ||
+    localStorageService.get('catagerys').length === 0) {
+    localStorageService.set('catagarys', ['drink', 'fruit', 'sport']);
   }
 
   var customItemList = [];

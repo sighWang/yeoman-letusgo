@@ -1,6 +1,8 @@
 'use strict'
 
 angular.module('yeomanLetusgoApp')
-.service('CatagaryService', function () {
-
-})
+  .service('catagaryService', function (localStorageService) {
+    this.getCatagarys = function () {
+      return localStorageService.get('catagarys');
+    };
+  });

@@ -17,11 +17,11 @@
   </div>
   <div class="input-group col-md-7 col-md-offset-2">
     <span class="input-group-addon">catagary</span>
-    <input type="text" list="catagarys" class="form-control" ng-model="goods.catagary">
-    <datalist id="catagarys" ng-repeat="catagary in catagarys">
-      <option value="{{catagary}}"></option>
-    </datalist>
+    <input type="text" list="goodsCatagarys" class="form-control" ng-model="goods.catagary">
   </div>
+  <datalist id="goodsCatagarys">
+    <option ng-repeat="catagary in catagarys" value=" {{catagary}} "></option>
+  </datalist>
   <div class="input-group col-md-7 col-md-offset-2  text-right">
     <a ng-href="#/listManage" ng-click="add(goods)">{{goods.price}}提交修改</a>
   </div>

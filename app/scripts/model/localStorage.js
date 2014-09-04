@@ -5,16 +5,19 @@ function initData(localStorageService) {
   var lychee = new Goods('ITEM000002', '荔枝', '斤', 15.00, 'fruit');
   var badminton = new Goods('ITEM000003', '羽毛球', '个', 4.50, 'sport');
   goodsList.push(cocacola, sprite, lychee, badminton);
-  if (localStorageService.get('goodsList').length === 0) {
+  if (localStorageService.get('goodsList') === null ||
+    localStorageService.get('goodsList').length === 0) {
     localStorageService.set('goodsList', goodsList);
   }
 
-  if (localStorageService.get('catagery').length === 0) {
+  if (localStorageService.get('catagery') === null ||
+    localStorageService.get('catagery').length === 0) {
     localStorageService.set('catagary', ['drink', 'fruit', 'sport']);
   }
 
   var customItemList = [];
-  if (localStorageService.get('customGoodsList').length === 0) {
+  if (localStorageService.get('customGoodsList') === null ||
+    localStorageService.get('customGoodsList').length === 0) {
     localStorageService.set('customGoodsList', customItemList);
   }
 }

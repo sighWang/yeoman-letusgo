@@ -9,6 +9,10 @@ function initData(localStorageService) {
     localStorageService.set('goodsList', goodsList);
   }
 
+  if (localStorageService.get('catagery').length === 0) {
+    localStorageService.set('catagary', ['drink', 'fruit', 'sport']);
+  }
+
   var customItemList = [];
   if (localStorageService.get('customGoodsList').length === 0) {
     localStorageService.set('customGoodsList', customItemList);

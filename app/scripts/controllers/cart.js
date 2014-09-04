@@ -23,5 +23,5 @@ angular.module('yeomanLetusgoApp')
     $scope.updatePage = function () {
       $scope.total = cartService.getTotal();
       $scope.catagarys = cartService.getCatagary();
-    }
+    };
   });

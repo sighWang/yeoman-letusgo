@@ -7,7 +7,6 @@ angular.module('yeomanLetusgoApp')
 
     this.storeGoods = function (goods) {
       this.temporaryGoods = goods;
-
     };
 
     this.getStoreGoods = function () {
@@ -22,6 +21,18 @@ angular.module('yeomanLetusgoApp')
       var goodsList = this.goodsList;
       var index = _.findIndex(goodsList, {'id': goods.id});
       this.goodsList[index] = goods;
-      localStorageService.set('goodsList', goodsList);
+      this.editGoodsList(goodsList);
+    };
+
+    this.addGoods = function (goods) {
+      var goodsList = this.goodsList;
+      goodsList.push(goods);
+      this.editGoodsList(goodsList);
+    };
+    this.removeGoods = function (goods) {
+      var goodsList = this.goodsList;
+      var index = _.findIndex(goodsList, {'id': goods.id});
+      goodsList.splice(index, 1);
+      this.editGoodsList(goodsList);
     }
   });

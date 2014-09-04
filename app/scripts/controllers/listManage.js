@@ -1,18 +1,17 @@
 'use strict';
 angular.module('yeomanLetusgoApp')
   .controller('ListmanageCtrl', function ($scope, cartService, goodsListService) {
-    var goodsList = cartService.getGoodslist();
+    var goodsList = goodsListService.getGoodslist();
 
-    $scope.goodsList = cartService.getGoodslist();
+    $scope.goodsList = goodsListService.getGoodslist();
 
     $scope.showEdit = function (goods) {
       goodsListService.storeGoods(goods);
     };
 
     $scope.removeItem = function (goods) {
-      var index = _.findIndex(goodsList, {'id': goods.id});
-      goodsList.splice(index, 1);
-      goodsListService.editGoodsList(goodsList);
-      $scope.goodsList = cartService.getGoodslist();
+      goodsListService.removeGoods(goods);
+      $scope.goodsList = goodsListService.getGoodslist();
+      console.log('here');
     };
   });

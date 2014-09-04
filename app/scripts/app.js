@@ -43,10 +43,10 @@ angular
         templateUrl: 'views/listManage/editGoods.html',
         controller: 'EditGoodsCtrl'
       })
-//      .when('/addGoods', {
-//        templateUrl: 'view/listManage/addGoods.html',
-//        controller: 'addGoodsCtrl'
-//      })
+      .when('/addGoods', {
+        templateUrl: 'views/listManage/addGoods.html',
+        controller: 'AddGoodsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

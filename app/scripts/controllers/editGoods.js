@@ -6,6 +6,5 @@ angular.module('yeomanLetusgoApp')
 
     $scope.edit = function (goods) {
       goodsListService.editGoods(goods);
-      console.log(goods);
     }
   });

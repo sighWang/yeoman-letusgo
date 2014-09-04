@@ -14,7 +14,7 @@ angular.module('yeomanLetusgoApp')
       return this.temporaryGoods;
     };
 
-    this.editGoodsList = function(goodsList){
+    this.editGoodsList = function (goodsList) {
       localStorageService.set('goodsList', goodsList);
     };
 

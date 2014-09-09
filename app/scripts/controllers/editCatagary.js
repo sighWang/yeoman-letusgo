@@ -2,7 +2,9 @@
 
 angular.module('yeomanLetusgoApp')
   .controller('EditCatagaryCtrl', function ($scope, catagaryService) {
-    $scope.getCatagary = function () {
-      catagaryService.getStoreCatagery();
+    $scope.catagary = catagaryService.getStoreCatagary();
+
+    $scope.edit = function (catagary) {
+      catagaryService.editCatagary(catagary);
     }
   });

@@ -6,6 +6,7 @@
       <table class="table">
         <thead>
         <tr>
+          <th>id</th>
           <th>名称</th>
           <th>删除</th>
           <th>修改</th>
@@ -13,7 +14,8 @@
         </thead>
         <tbody>
         <tr ng-repeat="catagary in catagarys">
-          <td>{{catagary}}</td>
+          <td>{{catagary.id}}</td>
+          <td>{{catagary.name}}</td>
           <td>
             <a ng-click="removeItem(catagary)">删除</a>
           </td>

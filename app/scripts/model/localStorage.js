@@ -14,9 +14,8 @@ function initData(localStorageService) {
 
   if (localStorageService.get('catagerys') === null ||
     localStorageService.get('catagerys').length === 0) {
-    localStorageService.set('catagarys', ['drink', 'fruit', 'sport']);
+    localStorageService.set('catagarys', [{id:1, name:'drink'}, {id:2, name:'fruit'}, {id:3, name:'sport'}]);
   }
-
   var customItemList = [];
   if (localStorageService.get('customGoodsList') === null ||
     localStorageService.get('customGoodsList').length === 0) {

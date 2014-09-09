@@ -6,5 +6,5 @@ angular.module('yeomanLetusgoApp')
 
     $scope.edit = function (catagary) {
       catagaryService.editCatagary(catagary);
-    }
+    };
   });

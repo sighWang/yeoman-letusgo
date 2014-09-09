@@ -36,5 +36,5 @@ angular.module('yeomanLetusgoApp')
       var index = _.findIndex(goodsList, {'id': goods.id});
       goodsList.splice(index, 1);
       this.editGoodsList(goodsList);
-    }
+    };
   });

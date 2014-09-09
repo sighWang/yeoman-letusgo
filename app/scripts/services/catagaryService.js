@@ -31,6 +31,6 @@
         var index = _.findIndex(catagarys, {'id': catagary.id});
         catagarys.splice(index, 1);
         this.editCatagarys(catagarys);
-      }
+      };
     });
 })(window._);

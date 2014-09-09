@@ -11,5 +11,5 @@ angular.module('yeomanLetusgoApp')
     $scope.removeItem = function (catagary){
       catagaryService.removeCatagary(catagary);
       $scope.catagarys = catagaryService.getCatagarys();
-    }
+    };
   });

@@ -35,7 +35,9 @@ describe('Controller: catagaryManagageCtrl', function () {
 
     it('remove Item', function () {
       createController();
-      $scope.removeItem({id:'3', name:'haha'});
+      spyOn(catagaryService, 'removeCatagary');
+      $scope.removeItem({id:'3', name:'4'});
+      expect(catagaryService.removeCatagary).toHaveBeenCalledWith({id:'3', name:'4'});
     });
   });
 

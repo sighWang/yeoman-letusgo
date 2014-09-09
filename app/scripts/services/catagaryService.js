@@ -16,9 +16,10 @@
       };
 
       this.editCatagary = function (catagary) {
+        var catagarys = this.catagarys;
         var index = _.findIndex(catagarys, {'id': catagary.id});
         this.catagarys[index] = catagary;
-        this.editGoodsList(catagarys);
+        this.editCatagarys(catagarys);
       };
 
       this.editCatagarys = function (catagarys) {

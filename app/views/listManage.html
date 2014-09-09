@@ -2,7 +2,17 @@
   <div class="panel panel-default">
     <div class="panel-heading">商品管理</div>
     <div class="panel-body">
-      <a ng-href="#/addGoods">添加新商品</a>
+      <div class="row">
+        <div class="col-lg-3">
+          <button type="button" class="btn btn-defualt"><a ng-href="#/addGoods">添加新商品</a></button>
+        </div>
+        <div class="input-group col-lg-3" >
+          <input type="text" class="form-control" placeholder="搜索" ng-model="search">
+           <span class="input-group-btn">
+             <button class="btn btn-default" type="button">search</button>
+           </span>
+        </div>
+      </div>
       <table class="table">
         <thead>
         <tr>
@@ -16,7 +26,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="goods in goodsList">
+        <tr ng-repeat="goods in goodsList | filter:search">
           <td>{{goods.id}}</td>
           <td>{{goods.name}}</td>
           <td>{{goods.unit}}</td>

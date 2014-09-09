@@ -51,6 +51,10 @@ angular
         templateUrl: 'views/catagaryManage.html',
         controller: 'CatagaryManageCtrl'
       })
+      .when('/editCatagary', {
+        templateUrl: 'views/catagaryManage/editCatagary.html',
+        controller: 'EditCatagaryCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

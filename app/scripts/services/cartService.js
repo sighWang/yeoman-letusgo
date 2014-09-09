@@ -1,5 +1,5 @@
 'use strict';
-
+(function (_) {
 angular.module('yeomanLetusgoApp')
   .service('cartService', function CartService(localStorageService) {
     this.customGoodsList = localStorageService.get('customGoodsList');
@@ -89,3 +89,4 @@ angular.module('yeomanLetusgoApp')
       return catagarys;
     };
   });
+})(window._);

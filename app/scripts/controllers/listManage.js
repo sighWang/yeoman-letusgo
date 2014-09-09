@@ -12,6 +12,5 @@ angular.module('yeomanLetusgoApp')
     $scope.removeItem = function (goods) {
       goodsListService.removeGoods(goods);
       $scope.goodsList = goodsListService.getGoodslist();
-      console.log('here');
     };
   });

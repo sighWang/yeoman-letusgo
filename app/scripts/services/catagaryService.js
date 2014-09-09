@@ -24,6 +24,13 @@
 
       this.editCatagarys = function (catagarys) {
         localStorageService.set('catagarys', catagarys);
+      };
+
+      this.removeCatagary = function (catagary) {
+        var catagarys = this.catagarys;
+        var index = _.findIndex(catagarys, {'id': catagary.id});
+        catagarys.splice(index, 1);
+        this.editCatagarys(catagarys);
       }
     });
 })(window._);

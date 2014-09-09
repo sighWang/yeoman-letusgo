@@ -6,12 +6,13 @@ describe('Controller: catagaryManagageCtrl', function () {
     module('yeomanLetusgoApp');
 
     inject(function ($injector) {
+
       $scope = $injector.get('$rootScope').$new();
       $controller = $injector.get('$controller');
       catagaryService = $injector.get('catagaryService');
 
       createController = function () {
-        return $controller('catagaryService', {
+        return $controller('CatagaryManageCtrl', {
           $scope: $scope
         });
       };

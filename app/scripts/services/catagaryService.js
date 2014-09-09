@@ -32,5 +32,10 @@
         catagarys.splice(index, 1);
         this.editCatagarys(catagarys);
       };
+
+      this.addCatagary = function (catagary) {
+        this.catagarys.push(catagary);
+        this.editCatagarys(this.catagarys);
+      };
     });
 })(window._);

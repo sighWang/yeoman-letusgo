@@ -1,10 +1,12 @@
 'use strict';
+(function (_) {
 describe('Service: cartService', function () {
-  var cartService, store = {} , localStorageService;
+  var cartService, store = {}, localStorageService, $scope;
 
   beforeEach(function () {
     module('yeomanLetusgoApp');
     inject(function ($injector) {
+      $scope = $injector.get('$rootScope').$new();
       localStorageService = $injector.get('localStorageService');
       cartService = $injector.get('cartService');
     });
@@ -70,3 +72,4 @@ describe('Service: cartService', function () {
     expect(cartService.getCatagary).toHaveBeenCalled();
   });
 });
+})(window._);

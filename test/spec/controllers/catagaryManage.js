@@ -22,7 +22,7 @@ describe('Controller: catagaryManagageCtrl', function () {
   describe('catagaryManageCtrl add remove edit get', function () {
     it('should can get all catagary', function () {
       createController();
-      expect($scope.catagarys.length).toEqual(jasmine.any(Number));
+      expect($scope.catagarys).toEqual(jasmine.any(Object));
       expect($scope.catagarys.length).toBeGreaterThan(0);
     });
 

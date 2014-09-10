@@ -1,7 +1,7 @@
 'use strict';
 
 describe('Controller: indexCtrl', function () {
-  var $scope, createController, cartService,  $controller;
+  var $scope, createController, cartService, $controller;
 
   beforeEach(function () {
     module('yeomanLetusgoApp');
@@ -29,11 +29,11 @@ describe('Controller: indexCtrl', function () {
       expect($scope.$emit).toHaveBeenCalledWith('listHighLight');
     });
 
-    it('addOneToCart:should call cartService.addGoodsNumberById',function () {
+    it('addOneToCart:should call cartService.addGoodsNumberById', function () {
       createController();
       spyOn($scope, '$emit');
       spyOn(cartService, 'addGoodsNumberById');
-      $scope.addOneToCart(new Goods('ITEM000002', '荔枝','斤', 15.00, 'fruit'));
+      $scope.addOneToCart(new Goods('ITEM000002', '荔枝', '斤', 15.00, 'fruit'));
       expect(cartService.addGoodsNumberById).toHaveBeenCalledWith('ITEM000002');
       expect($scope.$emit).toHaveBeenCalledWith('updateCartNumber');
     });

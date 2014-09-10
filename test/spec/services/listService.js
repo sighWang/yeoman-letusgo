@@ -29,25 +29,29 @@ describe('Service: goodsListService', function () {
   });
 
   it('editGoodsList: localStorageService.set should be called', function () {
-    goodsListService.editGoodsList([{id:'2', name:'2', cartgary:'2'}]);
-    expect(localStorageService.set).toHaveBeenCalledWith('goodsList',[{id:'2', name:'2', cartgary:'2'}]);
+    goodsListService.editGoodsList([
+      {id: '2', name: '2', cartgary: '2'}
+    ]);
+    expect(localStorageService.set).toHaveBeenCalledWith('goodsList', [
+      {id: '2', name: '2', cartgary: '2'}
+    ]);
   });
 
   it('editGoods: goodsListService.editGoodsList hava been called', function () {
     spyOn(goodsListService, 'editGoodsList');
-    goodsListService.editGoods({id:'2', name:'2', cartgary:'2'});
+    goodsListService.editGoods({id: '2', name: '2', cartgary: '2'});
     expect(goodsListService.editGoodsList).toHaveBeenCalled();
   });
 
   it('addGoods: goodsList length should be add one', function () {
     var length = goodsListService.goodsList.length;
-    goodsListService.addGoods({id:'2', name:'2', cartgary:'2'});
+    goodsListService.addGoods({id: '2', name: '2', cartgary: '2'});
     expect(goodsListService.goodsList.length).toEqual(length + 1);
   });
 
   it('remove: goodsList length should be minus one', function () {
     var length = goodsListService.goodsList.length;
-    goodsListService.removeGoods({id:'2', name:'2', cartgary:'2'});
+    goodsListService.removeGoods({id: '2', name: '2', cartgary: '2'});
     expect(goodsListService.goodsList.length).toEqual(length - 1);
   });
 });

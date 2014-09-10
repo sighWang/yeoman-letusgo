@@ -1,7 +1,7 @@
 'use strict';
 
 describe('Controller: indexCtrl', function () {
-  var $scope, createController, cartService,  $controller;
+  var $scope, createController, cartService, $controller;
 
   beforeEach(function () {
     module('yeomanLetusgoApp');
@@ -31,14 +31,14 @@ describe('Controller: indexCtrl', function () {
       createController();
       expect($scope.catagarys).toEqual(jasmine.any(Object));
     });
-    it('addOneToCart:should call cartService.addGoodsNumberById',function () {
+    it('addOneToCart:should call cartService.addGoodsNumberById', function () {
       createController();
       spyOn(cartService, 'addGoodsNumberById');
       spyOn(cartService, 'getTotal');
       spyOn(cartService, 'getCartNumber');
       spyOn(cartService, 'getCatagary');
       spyOn($scope, '$emit');
-      var good = new Goods('ITEM000002', '荔枝','斤', 15.00, 'fruit');
+      var good = new Goods('ITEM000002', '荔枝', '斤', 15.00, 'fruit');
       $scope.addOneToCart({goods: good, number: 2});
       expect(cartService.addGoodsNumberById).toHaveBeenCalledWith('ITEM000002');
       expect(cartService.getTotal).toHaveBeenCalled();
@@ -49,7 +49,7 @@ describe('Controller: indexCtrl', function () {
       createController();
       spyOn(cartService, 'minusGoodsNumberById');
       spyOn($scope, '$emit');
-      var good = new Goods('ITEM000002', '荔枝','斤', 15.00, 'fruit');
+      var good = new Goods('ITEM000002', '荔枝', '斤', 15.00, 'fruit');
       $scope.minusOneToCart({goods: good, number: 2});
       expect(cartService.minusGoodsNumberById).toHaveBeenCalledWith('ITEM000002');
       expect($scope.$emit).toHaveBeenCalledWith('updateCartNumber');

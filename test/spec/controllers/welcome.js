@@ -1,7 +1,7 @@
 'use strict';
 
 describe('controller: welcome index', function () {
-  var $scope,creatController,$controller;
+  var $scope, creatController, $controller;
 
   beforeEach(function () {
     module('yeomanLetusgoApp');
@@ -19,8 +19,8 @@ describe('controller: welcome index', function () {
   });
 
   it('should be no highLight nav', function () {
-     spyOn($scope, '$emit');
-     creatController();
-     expect($scope.$emit).toHaveBeenCalledWith('welcomeHighLight');
+    spyOn($scope, '$emit');
+    creatController();
+    expect($scope.$emit).toHaveBeenCalledWith('welcomeHighLight');
   });
 });

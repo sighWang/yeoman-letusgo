@@ -1,7 +1,7 @@
 'use strict';
 
 describe('Controller: indexCtrl', function () {
-  var $scope, createController, cartService,  $controller;
+  var $scope, createController, cartService, $controller;
 
   beforeEach(function () {
     module('yeomanLetusgoApp');

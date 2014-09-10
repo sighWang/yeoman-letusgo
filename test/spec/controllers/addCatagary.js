@@ -1,7 +1,7 @@
 'use strict';
 
 describe('Controller: addCatagaryCtrl', function () {
-  var $scope, createController, catagaryService,  $controller;
+  var $scope, createController, catagaryService, $controller;
 
   beforeEach(function () {
     module('yeomanLetusgoApp');
@@ -24,8 +24,8 @@ describe('Controller: addCatagaryCtrl', function () {
     it('catagary shoude be add', function () {
       spyOn(catagaryService, 'addCatagary');
       createController();
-      $scope.add({id:'5', name:'5'});
-      expect(catagaryService.addCatagary).toHaveBeenCalledWith({id:'5', name:'5'});
+      $scope.add({id: '5', name: '5'});
+      expect(catagaryService.addCatagary).toHaveBeenCalledWith({id: '5', name: '5'});
     });
   });
 });

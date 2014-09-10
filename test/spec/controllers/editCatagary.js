@@ -1,7 +1,7 @@
 'use strict';
 
 describe('Controller: EditCatagaryCtrl', function () {
-  var $scope, createController, catagaryService,  $controller;
+  var $scope, createController, catagaryService, $controller;
 
   beforeEach(function () {
     module('yeomanLetusgoApp');
@@ -22,15 +22,15 @@ describe('Controller: EditCatagaryCtrl', function () {
 
   describe('editCatagary.js', function () {
     it('catagary should be get', function () {
-      spyOn(catagaryService, 'getStoreCatagary').andReturn({id:'4', name:'5'});
+      spyOn(catagaryService, 'getStoreCatagary').andReturn({id: '4', name: '5'});
       createController();
       expect($scope.catagary).toEqual(jasmine.any(Object));
     });
     it('catagaryService.editCatagary should be called', function () {
       spyOn(catagaryService, 'editCatagary');
       createController();
-      $scope.edit({id:'4', name:'5'});
-      expect(catagaryService.editCatagary).toHaveBeenCalledWith({id:'4', name:'5'});
+      $scope.edit({id: '4', name: '5'});
+      expect(catagaryService.editCatagary).toHaveBeenCalledWith({id: '4', name: '5'});
     })
   });
 });

@@ -29,16 +29,15 @@ describe('Controller: catagaryManagageCtrl', function () {
     it('edit catagary', function () {
       createController();
       spyOn(catagaryService, 'storeCatagary');
-      $scope.showEdit({id:'3', name:'haha'});
-      expect(catagaryService.storeCatagary).toHaveBeenCalledWith({id:'3', name:'haha'});
+      $scope.showEdit({id: '3', name: 'haha'});
+      expect(catagaryService.storeCatagary).toHaveBeenCalledWith({id: '3', name: 'haha'});
     });
 
     it('remove Item', function () {
       createController();
       spyOn(catagaryService, 'removeCatagary');
-      $scope.removeItem({id:'3', name:'4'});
-      expect(catagaryService.removeCatagary).toHaveBeenCalledWith({id:'3', name:'4'});
+      $scope.removeItem({id: '3', name: '4'});
+      expect(catagaryService.removeCatagary).toHaveBeenCalledWith({id: '3', name: '4'});
     });
   });
-
 });

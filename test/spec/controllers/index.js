@@ -57,7 +57,7 @@ describe('Controller: indexCtrl', function () {
       expect($scope.listActive).toEqual('active');
     });
 
-    it('it should catch highLight event',function () {
+    it('it should catch highLight event', function () {
       createController();
       $rootScope.$broadcast('welcomeHighLight');
       expect($scope.cartActive).toEqual('');

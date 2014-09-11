@@ -1,8 +1,6 @@
 'use strict';
 angular.module('yeomanLetusgoApp')
-    .controller('ListmanageCtrl', function ($scope, cartService, goodsListService) {
-        var goodsList = goodsListService.getGoodslist();
-
+    .controller('ListmanageCtrl', function ($scope, goodsListService) {
         $scope.goodsList = goodsListService.getGoodslist();
 
         $scope.showEdit = function (goods) {

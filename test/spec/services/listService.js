@@ -1,6 +1,6 @@
 'use strict';
 describe('Service: goodsListService', function () {
-  var goodsListService, store = {}, localStorageService, $scope;
+  var goodsListService, storeList = {}, localStorageService, $scope;
 
   beforeEach(function () {
     module('yeomanLetusgoApp');
@@ -10,11 +10,11 @@ describe('Service: goodsListService', function () {
       goodsListService = $injector.get('goodsListService');
     });
     spyOn(localStorageService, 'get').andCallFake(function (key) {
-      return store[key];
+      return storeList[key];
     });
 
     spyOn(localStorageService, 'set').andCallFake(function (key, value) {
-      store[key] = value;
+      storeList[key] = value;
     });
     initData(localStorageService);
   });
